@@ -12,7 +12,8 @@ function ProductScreen({match}) {
 
         async function fetchProduct() {
 
-            const{ data } = await axios.get(`'/api/products'${match.params.id}`)
+            const{ data } = await axios.get(`/api/products/${match.params.id}`)
+            
             setProduct(data)
         }
 

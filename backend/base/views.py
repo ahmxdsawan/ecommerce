@@ -13,7 +13,7 @@ from .serializers import ProductSerializer
 @api_view(['GET'])
 def getRoutes(request):
     routes = [
-        'api/products',
+        'api/products/',
         'api/products/create/',
 
         'api/products/upload/',
@@ -38,5 +38,5 @@ def getProducts(request):
 @api_view(['GET'])
 def getProduct(request, pk):
     product = Product.objects.get(_id=pk)
-    serializers = ProductSerializer(product, many=False)
+    serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
